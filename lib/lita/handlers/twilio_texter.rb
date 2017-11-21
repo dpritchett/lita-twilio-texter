@@ -6,6 +6,9 @@ module Lita
     class TwilioTexter < Handler
       Lita.register_handler(self)
 
+      config :twilio_sid,   default: ENV['TWILIO_ACCOUNT_SID']
+      config :twilio_token, default: ENV['TWILIO_AUTH_TOKEN']
+
       route /^text\s+(\d+)\s+(.+)$/i,
         :send_text,
         command: true,
@@ -13,8 +16,8 @@ module Lita
 
       def client
         @_client ||= Twilio::REST::Client.new(
-          ENV.fetch('TWILIO_ACCOUNT_SID'),
-          ENV.fetch('TWILIO_AUTH_TOKEN')
+          config.twilio_sid,
+          config.twilio_token
         )
       end
 
