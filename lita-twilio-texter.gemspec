@@ -1,11 +1,11 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-twilio-texter"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Daniel J. Pritchett"]
   spec.email         = ["dpritchett@gmail.com"]
   spec.description   = "Lita skill for sending SMSes via Twilio API"
   spec.summary       = "Lita skill for sending SMSes via Twilio API"
-  spec.homepage      = "https://github.com/spritchett/lita-twilio-texter"
+  spec.homepage      = "https://github.com/dpritchett/lita-twilio-texter"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
