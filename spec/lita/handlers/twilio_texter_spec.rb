@@ -30,6 +30,14 @@ describe Lita::Handlers::TwilioTexter, lita_handler: true do
       expect(number.start_with?('+1901')).to be_truthy
     end
   end
+
+  describe ':send_twilio_sms' do
+    it 'should work' do
+      response = subject.send_twilio_sms(to: '+19016052970', body: 'hi from lita test')
+      expect(response.error_code).to eq(0)
+      expect(response.status).to eq("queued")
+    end
+  end
 end
 
 
